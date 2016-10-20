@@ -1,5 +1,5 @@
 FROM debian:jessie
-MAINTAINER TM@KUNGF.OOO
+MAINTAINER TM@TONIMICHEL.DE
 RUN apt-get update && apt-get install -y locales \
     tar \
     git \
@@ -25,6 +25,18 @@ RUN apt-get update && apt-get install -y locales \
     python3-venv \
     python3.4-dev \
     python3 \
+    python-virtualenv \
+    cmake \
+    libtiff5-dev \
+    libjpeg62-turbo-dev \
+    zlib1g-dev \
+    libfreetype6-dev \
+    liblcms2-dev \
+    libwebp-dev \
+    tcl8.6-dev \
+    tk8.6-dev \
+    python-tk \
+    python3-tk \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
