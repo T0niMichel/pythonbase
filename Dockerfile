@@ -18,12 +18,12 @@ RUN apt-get update && apt-get install -y locales \
     python3-pip \
     python3-psycopg2 \
     bpython3 \
-    postgresql-server-dev-9.5 \
+    postgresql-server-dev-9.4 \
     libncurses-dev \
-    libpython3.5-stdlib \
-    libpython3.5-dev \
+    libpython3.4-stdlib \
+    libpython3.4-dev \
     python3-venv \
-    python3.5-dev \
+    python3.4-dev \
     python3 \
     python-virtualenv \
     cmake \
