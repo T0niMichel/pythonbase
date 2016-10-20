@@ -18,12 +18,12 @@ RUN apt-get update && apt-get install -y locales \
     python3-pip \
     python3-psycopg2 \
     bpython3 \
-    postgresql-server-dev-9.4 \
+    postgresql-server-dev-9.5 \
     libncurses-dev \
-    libpython3.4-stdlib \
-    libpython3.4-dev \
+    libpython3.5-stdlib \
+    libpython3.5-dev \
     python3-venv \
-    python3.4-dev \
+    python3.5-dev \
     python3 \
     python-virtualenv \
     cmake \
@@ -34,16 +34,14 @@ RUN apt-get update && apt-get install -y locales \
     liblcms2-dev \
     libwebp-dev \
     tcl8.6-dev \
-    tk8.6-dev \
-    python-tk \
-    python3-tk \
+
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV CONTAINER_USERNAME='rapidflask'
-ENV CONTAINER_GROUPNAME='rapidflask'
+ENV CONTAINER_USERNAME='app'
+ENV CONTAINER_GROUPNAME='app'
 ENV HOMEDIR='/home/'$CONTAINER_USERNAME
 
 # add non root user
@@ -61,7 +59,7 @@ RUN mkdir -p /usr/src/$CONTAINER_USERNAME &&\
 
 #change user
 USER rapidflask
-WORKDIR /usr/src/rapidflask
+WORKDIR /usr/src/app
 ENV LANG c.utf8
 ENV LC_ALL c.utf8
 ENV LANGUAGE en_US.utf8
