@@ -58,15 +58,15 @@ RUN mkdir -p /usr/src/$CONTAINER_USERNAME &&\
   /usr/bin/pip3 install virtualenv
 
 #change user
-USER rapidflask
+USER app
 WORKDIR /usr/src/app
 ENV LANG c.utf8
 ENV LC_ALL c.utf8
 ENV LANGUAGE en_US.utf8
 RUN virtualenv -p python3 rAPPenv --no-site-packages
-ENV VIRTUAL_ENV /usr/src/rapidflask/rAPPenv
+ENV VIRTUAL_ENV /usr/src/app/rAPPenv
 ENV  PATH "$VIRTUAL_ENV/bin:$PATH"
 RUN pip install bpython --upgrade
-WORKDIR /srv/rapidflask
+WORKDIR /srv/app/
 
 CMD ["bpython"]
